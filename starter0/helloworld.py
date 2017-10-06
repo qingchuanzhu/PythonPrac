@@ -7,3 +7,5 @@ s = "my name"
 c = "full name"
 d = "middle name"
 e = "her name"
+
+# testing normal fetch
