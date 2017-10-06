@@ -10,6 +10,8 @@ e = "her name"
 
 rb2 = "one commit on master branch"
 
+rb_rb2 = "rebase tool testing on master branch"
+
 # I continue work without knowing there is a push and testing a fetch without commit my work first
 
 # testing normal fetch
