@@ -7,3 +7,5 @@ s = "my name"
 c = "full name"
 d = "middle name"
 e = "her name"
+
+# I continue work without knowing there is a push and testing a fetch without commit my work first
