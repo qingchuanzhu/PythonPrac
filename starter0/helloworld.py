@@ -8,6 +8,8 @@ c = "full name"
 d = "middle name"
 e = "her name"
 
+rb2 = "one commit on master branch"
+
 # I continue work without knowing there is a push and testing a fetch without commit my work first
 
 # testing normal fetch
