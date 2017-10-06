@@ -12,6 +12,7 @@ rb2 = "one commit on master branch"
 rb = "one commit on experiment branch"
 
 rb_rb2 = "rebase tool testing on master branch"
+rb_rb = "testing rebase tool"
 
 # I continue work without knowing there is a push and testing a fetch without commit my work first
 
