@@ -3,4 +3,5 @@ print("Hello world")
 dummySum = 1 + 4
 a = "first name"
 b = "last name"
+s = "my name"
 
