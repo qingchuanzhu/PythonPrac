@@ -1,19 +1,6 @@
-# hello world created on 9/28/2017
-print("Hello world")
-dummySum = 1 + 4
-a = "first name"
-b = "last name"
-s = "my name"
-c = "full name"
-d = "middle name"
-e = "her name"
-
-rb2 = "one commit on master branch"
-rb = "one commit on experiment branch"
-
-rb_rb2 = "rebase tool testing on master branch"
-rb_rb = "testing rebase tool"
-
-# I continue work without knowing there is a push and testing a fetch without commit my work first
-
-# testing normal fetch
+# A first Python script
+import sys
+print(sys.platform)
+print(2 ** 100)
+x = 'Spam!'
+print(x * 8)
