@@ -1,27 +1,25 @@
-from collections import defaultdict
+import time
 
 
-def two_sum(array, target):
-    # build up hash
-    d = defaultdict(list)
-    i = 0
-    for x in array:
-        if x in d:
-            d[x] = d[x].append(i)
-        else:
-            d[x] = [i]
-        i = i+1
+def twoSum(nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        '''
+        Keep a variable for the index, using list.index() is costly   
+        '''
 
-    print(d)
-    
-    for x in array:
-        if target - x in d:
-            if d[x][0] != d[target - x][0]:
-                return d[x][0], d[target - x][0]
+        start_time = time.time()
+        d = {}
+        for i in range(len(nums)):
+            partner = target - nums[i]
+            if partner in d:
+                print("--- %s seconds ---" % (time.time() - start_time))
+                return [d[partner], i]
             else:
-                if len(d[x]) >= 2:
-                    return d[x][0], d[x][1]
-    return -1, -1
+                d[nums[i]] = i
 
 
-print(two_sum([3, 3], 6))
+print(twoSum([2, 7, 2, 15], 9))
