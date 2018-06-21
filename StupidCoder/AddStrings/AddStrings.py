@@ -9,8 +9,6 @@ def addStrings(num1, num2):
     if num2 == '0':
         return num1
 
-    L_long = []
-    L_short = []
     Sum = []
     if len(num1) > len(num2):
         L_long = list(num1)
@@ -21,9 +19,9 @@ def addStrings(num1, num2):
 
     carry_in = '0'
     for i in range(-1, -(len(L_short)+1), -1):
-        result_tuple = addDigits(L_short[i], L_long[i], carry_in)
-        carry_in = result_tuple[1]
-        Sum = [result_tuple[0]] + Sum
+        tempSum = int(L_short[i]) + int(L_long[i]) + int(carry_in)
+        carry_in = str(tempSum // 10)
+        Sum = [str(tempSum % 10)] + Sum
 
     end_index = len(L_long) - len(L_short) - 1
     if carry_in == '1':
@@ -32,8 +30,8 @@ def addStrings(num1, num2):
                 Sum = ['0'] + Sum
                 end_index = i - 1
             else:
-                tuple = addDigits(L_long[i], '0', carry_in)
-                Sum = [tuple[0]] + Sum
+                tempSum = int(L_long[i]) + int(carry_in)
+                Sum = [str(tempSum)] + Sum
                 carry_in = '0'
                 end_index = i - 1
                 break
