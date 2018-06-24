@@ -4,7 +4,9 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        vowels = 'AEIOUaeiou'
+        vowelkey = 'AEIOUaeiou'
+        vowelvalues = [None] * 10
+        vowels = dict(zip(vowelkey, vowelvalues))
         low = 0
         high = len(s) - 1
         s = list(s)
