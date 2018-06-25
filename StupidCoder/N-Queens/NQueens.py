@@ -56,6 +56,38 @@ class Solution:
         return True
 
 
+    def solveNQueens2(self, n):
+        self.B = [None] * n
+        self.result = list()
+        self.findPosForRow2(n, 0)
+        return self.result
+
+
+    def findPosForRow2(self, n, row):
+        for col in range(n):
+            if self.isValidPos2(n, row, col):
+                self.B[row] = col
+                if row == n - 1:
+                    temp = list()
+                    for i in range(n):
+                        temp.append('.' * self.B[i] + 'Q' + '.' * (n - self.B[i] - 1))
+                    self.result.append(temp)
+                    self.B[row] = None
+                else:
+                    self.findPosForRow2(n, row + 1)
+        if row >= 1:
+            self.B[row] = None
+
+
+    def isValidPos2(self, n, row, col):
+        for i in range(row):
+            queen = self.B[i]
+            if queen == col or col == row + queen - i or col == -row + queen + i:
+                return False
+        return True
+
+
 s = Solution()
 print(s.solveNQueens(1))
 print(s.solveNQueens(2))
+print(s.solveNQueens2(4))
