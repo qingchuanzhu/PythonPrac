@@ -1,4 +1,5 @@
 a = 'dead'
 b = 'parrot'
 c = 'sketch'
-print(a, b, c)
+d = 'hello silly'
+print(a, b, c, d)
