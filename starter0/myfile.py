@@ -1,2 +1,2 @@
-title = "The Meaning of Life"
+title = "The Life is interesting"
 a = "hahahaha"
