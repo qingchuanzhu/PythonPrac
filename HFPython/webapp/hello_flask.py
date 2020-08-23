@@ -1,6 +1,6 @@
 from flask import Flask
 from vsearch import search4letters
-from flask import render_template
+from flask import render_template, request
 
 app = Flask(__name__)
 
@@ -10,8 +10,10 @@ def hello() -> str:
 
 @app.route('/search4', methods=['POST'])
 def do_search():
-    return str(search4letters(phrase='life, the universe, and everything',
-                          letters='eiru,!'))
+    phrase = request.form['phrase']
+    letters = request.form['letters']
+    return str(search4letters(phrase=phrase,
+                          letters=letters))
 
 @app.route('/entry')
 def entry_page():
