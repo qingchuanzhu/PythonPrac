@@ -12,8 +12,11 @@ def hello() -> str:
 def do_search():
     phrase = request.form['phrase']
     letters = request.form['letters']
-    return str(search4letters(phrase=phrase,
-                          letters=letters))
+    return render_template('results.html',
+                           the_title='Here are your results:',
+                           the_phrase=phrase,
+                           the_letters=letters,
+                           the_results=str(search4letters(phrase=phrase,letters=letters)))
 
 @app.route('/entry')
 def entry_page():
