@@ -4,15 +4,21 @@ from flask import render_template, request
 
 app = Flask(__name__)
 
+def log_request(req:'flask_request', res:str) -> None:
+    with open('vsearch.log', 'a') as log:
+        print(req, res, file=log)
+
 @app.route('/search4', methods=['POST'])
 def do_search():
     phrase = request.form['phrase']
     letters = request.form['letters']
+    results = str(search4letters(phrase=phrase,letters=letters))
+    log_request(request, results)
     return render_template('results.html',
                            the_title='Here are your results:',
                            the_phrase=phrase,
                            the_letters=letters,
-                           the_results=str(search4letters(phrase=phrase,letters=letters)))
+                           the_results=results)
 @app.route('/')
 @app.route('/entry')
 def entry_page():
